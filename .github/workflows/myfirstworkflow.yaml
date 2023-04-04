@@ -1,0 +1,20 @@
+name: My cool new Workflow
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  
+jobs:
+    myfirstjob:
+              name: First Job
+              runs-on: ubuntu-latest
+              steps:
+              - name: Step One
+                uses: actions/checkout@v3 #Clone the repo on the runner Ubuntu
+              - name: Step Two
+                run: |
+                  touch newfile.yaml
+                  echo "Please Gena is Tuesday Taco" >> newfile.yaml
+                  cat newfile.yaml
+                  pwd
