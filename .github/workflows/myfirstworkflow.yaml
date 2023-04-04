@@ -18,3 +18,16 @@ jobs:
                   echo "Please Gena is Tuesday Taco" >> newfile.yaml
                   cat newfile.yaml
                   pwd
+    mysecondjob:
+              needs: [myfirstjob] #Wait for the first job to be finished to start with the second
+              name: Second Job
+              runs-on: macos-latest
+              steps:
+              - name: Step One
+                run: date
+    mythirdjob:
+              name: Third Job
+              runs-on: windows-latest
+              steps:
+              - name: Step One
+                run: date
