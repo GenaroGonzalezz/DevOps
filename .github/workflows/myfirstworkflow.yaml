@@ -14,9 +14,9 @@ jobs:
                 uses: actions/checkout@v3 #Clone the repo on the runner Ubuntu
               - name: Step Two
                 run: |
-                  touch newfile.yaml
-                  echo "Please Gena is Tuesday Taco" >> newfile.yaml
-                  cat newfile.yaml
+                  touch ${{ secrets.MY_SECRET }}.yaml
+                  echo "Please Gena is Tuesday Taco" >> ${{ secrets.MY_SECRET }}.yaml
+                  cat ${{ secrets.MY_SECRET }}.yaml
                   pwd
     mysecondjob:
               needs: [myfirstjob] #Wait for the first job to be finished to start with the second
