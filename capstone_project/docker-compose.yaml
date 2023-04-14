@@ -1,0 +1,18 @@
+version: "3"  
+services:
+  ansible:
+    build: 
+      context: ./ansible/ansible_base
+      dockerfile: Dockerfile
+    container_name: ansible_controller
+    volumes:
+      - type: bind
+        source: ./ansible/ansible_files
+        target: /home/ansible_controller/ansible_files
+  target1:
+    build: 
+      context: ./capstone-app
+      dockerfile: Dockerfile
+    container_name: capstone-app
+    ports:
+      - "3000:3000"
