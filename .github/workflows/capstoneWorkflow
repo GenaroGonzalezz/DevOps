@@ -66,3 +66,4 @@ jobs:
                   context: ./capstone-app
                   push: true
                   tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+                  #
