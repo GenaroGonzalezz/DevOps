@@ -40,7 +40,7 @@ jobs:
               runs-on: ubuntu-latest
               defaults:
                 run:
-                  working-directory: ./capstone-app
+                  working-directory: ./capstone_project/hello-world
               
               steps:
                - name: Checkout
