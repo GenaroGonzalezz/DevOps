@@ -1,0 +1,32 @@
+- name: Ansible Play for all hosts
+  hosts: all
+  become: yes
+  tasks:
+  - name: Ping Test to verify connect
+    ansible.builtin.ping:
+  - name: Install apache2 using apt module
+    apt: 
+       name: apache2
+       update_cache: yes
+       state: present
+  - name: Install all packages using loop
+    apt:
+      name: "{{ item }}"
+      update_cache: yes
+      state: present
+    loop: 
+      - jq
+      - apache2
+      - vim
+      - python3
+
+#  - name: Create a file using vars
+ #   vars: 
+  #     filename: vars
+   # command: sudo touch /home/ansible_controller/ansible_files/{{filename}}.txt
+#  - name: Install Packages using vars files
+ #   apt:
+  #    name: "{{ softwares }}"
+   #   update_cache: yes
+    #  state: present
+

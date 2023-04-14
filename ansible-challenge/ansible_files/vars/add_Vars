@@ -1,0 +1,5 @@
+softwares:
+	- jq
+	- vim
+	- apache2
+	- python3
