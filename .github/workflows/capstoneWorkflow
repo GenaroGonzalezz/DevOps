@@ -11,7 +11,7 @@ jobs:
               
               defaults:
                 run:
-                  working-directory: ./capstone-app
+                  working-directory: ./capstone_project/hello-world
         
               strategy:
                 matrix:
